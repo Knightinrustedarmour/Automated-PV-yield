@@ -1,0 +1,33 @@
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pvyield"
+version = "0.1.0"
+description = "Automated PV energy yield assessment pipeline (PVLIB + PVGIS)"
+requires-python = ">=3.10"
+dependencies = [
+  "pvlib>=0.10",
+  "pandas>=2.0",
+  "numpy>=1.24",
+  "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-cov>=4.1", "ruff>=0.4"]
+
+[project.scripts]
+pvyield = "pvyield.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: needs internet access (PVGIS)"]
+addopts = "-m 'not integration'"
+
+[tool.ruff]
+line-length = 100
