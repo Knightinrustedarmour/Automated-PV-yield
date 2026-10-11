@@ -1,0 +1,8 @@
+{
+  "energy_kwh": 10390.4,
+  "specific_yield_kwh_per_kwp": 1039.0,
+  "poa_irradiation_kwh_m2": 1284.3,
+  "performance_ratio": 0.809,
+  "capacity_factor": 0.1183,
+  "peak_ac_kw": 8.0
+}
